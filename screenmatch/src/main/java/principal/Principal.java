@@ -10,8 +10,10 @@ import service.ConvierteDatos;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
+import java.util.concurrent.atomic.AtomicInteger;
 
 public class Principal {
     private Scanner teclado = new Scanner(System.in);
@@ -44,18 +46,29 @@ public class Principal {
         }
         //temporadas.forEach(System.out::println);
 
-
+        int totalTemporadaSerie = 0;
     // Mostrar solo el titulo de los episodios para las temporadas
-        for (int i = 0; i < datos.totalDeTemporadas() ; i++) {
-            List<DatosEpisodio> episodiosTemporada = temporadas.get(i).episodios();
-            for (int j = 0; j < episodiosTemporada.size() ; j++) {
-                System.out.println(episodiosTemporada.get(j).titulo());
-            }
-        }
+//        for (int i = 0; i < datos.totalDeTemporadas() ; i++) {
+//            List<DatosEpisodio> episodiosTemporada = temporadas.get(i).episodios();
+//            for (int j = 0; j < episodiosTemporada.size() ; j++) {
+//                System.out.println(episodiosTemporada.get(j).titulo());
+//                con +=1;
+//
+//            }
+//        }
 
+//        System.out.println("Total de episodios de la Serie: " + con);;
+
+        // Existen una funcionalidad lamba para que sea mas legible
+        // Expresiones lamba
+
+        temporadas.forEach(t -> t.episodios().forEach(e -> System.out.println(e.titulo())));
+        AtomicInteger con = new AtomicInteger(1); temporadas.forEach(t -> t.episodios().forEach(e -> System.out.println(con.getAndIncrement() + ". " + e.titulo())));
+        System.out.println((con.get() -1));
 
 
     }
 
 
 }
+

@@ -7,6 +7,7 @@ import model.DatosTemporadas;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import principal.EjemploStream;
 import principal.Principal;
 import service.ConsumoAPI;
 import service.ConvierteDatos;
@@ -45,8 +46,11 @@ public class ScreenmatchApplication implements CommandLineRunner {
 //		}
 //		temporadas.forEach(System.out::println);
 
-		Principal principal = new Principal();
-		principal.muestraElMenu();
+//		Principal principal = new Principal();
+//		principal.muestraElMenu();
+
+		EjemploStream ejemploStream = new EjemploStream();
+		ejemploStream.MuestraEjemplo();
 
 
 
