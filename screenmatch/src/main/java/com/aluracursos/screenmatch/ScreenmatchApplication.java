@@ -46,11 +46,11 @@ public class ScreenmatchApplication implements CommandLineRunner {
 //		}
 //		temporadas.forEach(System.out::println);
 
-//		Principal principal = new Principal();
-//		principal.muestraElMenu();
+		Principal principal = new Principal();
+		principal.muestraElMenu();
 
-		EjemploStream ejemploStream = new EjemploStream();
-		ejemploStream.MuestraEjemplo();
+//		EjemploStream ejemploStream = new EjemploStream();
+//		ejemploStream.MuestraEjemplo();
 
 
 
